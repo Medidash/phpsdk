@@ -3,7 +3,7 @@
     "description": "Medidash Application Api Wrapper",
     "type": "library",
     "require": {
-        "laminas/laminas-http": "2.20.x-dev",
+        "laminas/laminas-http": "^2.19.0",
         "laminas/laminas-config": "3.10.x-dev"
     },
     "require-dev": {
