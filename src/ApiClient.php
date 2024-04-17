@@ -9,7 +9,6 @@ abstract class ApiClient
 {
 	protected Config $config;
 	protected Client $client;
-	protected string $endpoint;
 	protected string $path;
 
 	public function __construct()
@@ -18,7 +17,7 @@ abstract class ApiClient
 		{
 			$this->config = new Config(require 'config/medidash.config.php');
 			$this->client = new Client();
-			$this->endpoint = $this->config->endpoint;
+			$this->client->setEncType('application/json');
 		}
 		catch (\Exception $e)
 		{
@@ -29,7 +28,7 @@ abstract class ApiClient
 
 	protected function getUrl(): string
 	{
-		return $this->endpoint . $this->path;
+		return $this->config->endpoint . $this->path;
 	}
 
 	protected function execute(string $method, array $data = []): array

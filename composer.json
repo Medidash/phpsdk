@@ -22,6 +22,12 @@
             "Medidash\\Phpsdk\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "check": [
+            "@test"
+        ],
+        "test": "phpunit"
+    },
     "authors": [
         {
             "name": "Bona Philippe",

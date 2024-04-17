@@ -11,7 +11,7 @@ class Payment extends ApiClient
 
 	}
 
-	public function createPaymentLog(array $data)
+	public function createPaymentLog(array $data): array
 	{
 		$this->path = 'payments/log';
 		return $this->execute('POST', $data);
