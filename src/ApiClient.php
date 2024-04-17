@@ -7,7 +7,7 @@ use Laminas\Http\Client;
 
 abstract class ApiClient
 {
-	protected array $config;
+	protected Config $config;
 	protected Client $client;
 	protected string $endpoint;
 	protected string $path;
@@ -18,8 +18,7 @@ abstract class ApiClient
 		{
 			$this->config = new Config(require 'config/medidash.config.php');
 			$this->client = new Client();
-			$this->client->setOptions($this->config['http_client_options']);
-			$this->endpoint = $this->config['endpoint'];
+			$this->endpoint = $this->config->endpoint;
 		}
 		catch (\Exception $e)
 		{
