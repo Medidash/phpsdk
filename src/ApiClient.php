@@ -1,6 +1,6 @@
 <?php
 
-namespace Phil\MedidashPhpsdk;
+namespace Medidash\Phpsdk
 
 use Laminas\Config\Config;
 use Laminas\Http\Client;

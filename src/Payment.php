@@ -1,6 +1,6 @@
 <?php
 
-namespace Phil\MedidashPhpsdk;
+namespace Medidash\Phpsdk;
 
 
 class Payment extends ApiClient
