@@ -9,45 +9,41 @@ class Price implements Traversable
 	/**
 	 * @param int $product_id
 	 * @param int $pharmacy_id
-	 * @param int $price
+	 * @param float $price
 	 */
-	public function __construct(private int $product_id, private int $pharmacy_id, private int $price)
+	public function __construct(private int $product_id, private int $pharmacy_id, private float $price)
 	{
 	}
 	
 
-	public function getId()
-	{
-		return $this->id;
-	}
 
-	public function getProductId()
+	public function getProductId(): int
 	{
 		return $this->product_id;
 	}
 
-	public function getPharmacyId()
+	public function getPharmacyId():int
 	{
 		return $this->pharmacy_id;
 	}
 
-	public function getPrice()
+	public function getPrice():float
 	{
 		return $this->price;
 	}
 
 	/**
-	 * @param mixed $product_id
+	 * @param int $product_id
 	 */
-	public function setProductId($product_id): void
+	public function setProductId(int $product_id): void
 	{
 		$this->product_id = $product_id;
 	}
 
 	/**
-	 * @param mixed $pharmacy_id
+	 * @param int $pharmacy_id
 	 */
-	public function setPharmacyId($pharmacy_id): void
+	public function setPharmacyId(int $pharmacy_id): void
 	{
 		$this->pharmacy_id = $pharmacy_id;
 	}
@@ -55,7 +51,7 @@ class Price implements Traversable
 	/**
 	 * @param mixed $price
 	 */
-	public function setPrice($price): void
+	public function setPrice(float $price): void
 	{
 		$this->price = $price;
 	}
