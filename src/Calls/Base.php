@@ -1,11 +1,11 @@
 <?php
 
-namespace Medidash\Phpsdk;
+namespace Medidash\Phpsdk\Calls;
 
 use Laminas\Config\Config;
 use Laminas\Http\Client;
 
-abstract class ApiClient
+abstract class Base
 {
 	protected Config $config;
 	protected Client $client;

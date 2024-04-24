@@ -1,15 +1,10 @@
 <?php
 
-namespace Medidash\Phpsdk;
+namespace Medidash\Phpsdk\Calls;
 
-
-class Payment extends ApiClient
+class PaymentCall extends Base
 {
-	public function __construct()
-	{
-		parent::__construct();
 
-	}
 
 	public function createPaymentLog(array $data): array
 	{

@@ -19,14 +19,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Medidash\\Phpsdk\\Tests\\": "tests/"
+            "\\Medidash\\Phpsdk\\Tests\\": "tests/"
         }
     },
     "scripts": {
         "check": [
-            "@test"
+            "@tests"
         ],
-        "test": "phpunit"
+        "tests": "./vendor/bin/phpunit tests/."
     },
     "authors": [
         {

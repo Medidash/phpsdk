@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee9da20fc25bf87702b6996b0909bbf0",
+    "content-hash": "94f29e85680fc33fab92032cd7c69738",
     "packages": [
         {
             "name": "laminas/laminas-config",
@@ -358,12 +358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-stdlib.git",
-                "reference": "d0203ec48508ebb9b08e8e406b7c488b417b32aa"
+                "reference": "974b0bc83a4ae776844e129111239513e8bc6659"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/d0203ec48508ebb9b08e8e406b7c488b417b32aa",
-                "reference": "d0203ec48508ebb9b08e8e406b7c488b417b32aa",
+                "url": "https://api.github.com/repos/laminas/laminas-stdlib/zipball/974b0bc83a4ae776844e129111239513e8bc6659",
+                "reference": "974b0bc83a4ae776844e129111239513e8bc6659",
                 "shasum": ""
             },
             "require": {
@@ -410,7 +410,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2024-04-15T02:10:54+00:00"
+            "time": "2024-04-22T00:07:31+00:00"
         },
         {
             "name": "laminas/laminas-uri",
@@ -477,12 +477,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-validator.git",
-                "reference": "cf12ea8b05dec97c2d6a2dd4440f0433e8b45133"
+                "reference": "f0aea103cfa3694ba7475a69d1fe33541f28c8c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/cf12ea8b05dec97c2d6a2dd4440f0433e8b45133",
-                "reference": "cf12ea8b05dec97c2d6a2dd4440f0433e8b45133",
+                "url": "https://api.github.com/repos/laminas/laminas-validator/zipball/f0aea103cfa3694ba7475a69d1fe33541f28c8c4",
+                "reference": "f0aea103cfa3694ba7475a69d1fe33541f28c8c4",
                 "shasum": ""
             },
             "require": {
@@ -554,7 +554,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2024-04-15T00:34:12+00:00"
+            "time": "2024-04-22T01:22:20+00:00"
         },
         {
             "name": "psr/container",
@@ -727,12 +727,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "46be4560c4cd4bab2b74882c0da39a4548a5cfbe"
+                "reference": "c5ee33df86c06b3278c670f64273b1ba768a0744"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/46be4560c4cd4bab2b74882c0da39a4548a5cfbe",
-                "reference": "46be4560c4cd4bab2b74882c0da39a4548a5cfbe",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c5ee33df86c06b3278c670f64273b1ba768a0744",
+                "reference": "c5ee33df86c06b3278c670f64273b1ba768a0744",
                 "shasum": ""
             },
             "require": {
@@ -778,7 +778,7 @@
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
                 "source": "https://github.com/nikic/PHP-Parser/tree/master"
             },
-            "time": "2024-03-17T10:24:36+00:00"
+            "time": "2024-04-19T12:04:10+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1290,12 +1290,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "835df1709ac6c968ba34bf23f3c30e5d5a266de8"
+                "reference": "547d314dc24ec1e177720d45c6263fb226cc2ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/835df1709ac6c968ba34bf23f3c30e5d5a266de8",
-                "reference": "835df1709ac6c968ba34bf23f3c30e5d5a266de8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/547d314dc24ec1e177720d45c6263fb226cc2ae3",
+                "reference": "547d314dc24ec1e177720d45c6263fb226cc2ae3",
                 "shasum": ""
             },
             "require": {
@@ -1367,7 +1367,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.20"
             },
             "funding": [
                 {
@@ -1383,7 +1383,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-14T07:05:31+00:00"
+            "time": "2024-04-24T06:32:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2314,12 +2314,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCSStandards/PHP_CodeSniffer.git",
-                "reference": "edc5ac76bfb08ec82bc3a787e6e7ded0b6a4bf3b"
+                "reference": "112bdabafc7217cb00d7b865cd6245327b675c0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/edc5ac76bfb08ec82bc3a787e6e7ded0b6a4bf3b",
-                "reference": "edc5ac76bfb08ec82bc3a787e6e7ded0b6a4bf3b",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHP_CodeSniffer/zipball/112bdabafc7217cb00d7b865cd6245327b675c0b",
+                "reference": "112bdabafc7217cb00d7b865cd6245327b675c0b",
                 "shasum": ""
             },
             "require": {
@@ -2386,7 +2386,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-15T01:33:58+00:00"
+            "time": "2024-04-23T22:27:19+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -2442,8 +2442,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "laminas/laminas-http": 20,
-        "laminas/laminas-config": 20,
         "phpunit/phpunit": 20,
         "squizlabs/php_codesniffer": 20,
         "phpstan/phpstan": 20
