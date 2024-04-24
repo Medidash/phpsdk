@@ -5,13 +5,10 @@ use Medidash\Phpsdk\Collections\ProductCollection;
 
 class ProductCall extends Base
 {
-
-	public function liveProducts(): array
-	{
-		$this->path = 'products/live';
-		return $this->execute('GET');
-	}
-
+	/**
+	 * @param int $pharmacyId
+	 * @return ProductCollection
+	 */
 	public function allProducts(int $pharmacyId): ProductCollection
 	{
 		$this->path = 'products/pharmacy/'.$pharmacyId;
