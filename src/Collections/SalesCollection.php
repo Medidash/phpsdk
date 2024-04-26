@@ -104,4 +104,12 @@ class SalesCollection extends AbstractCollection
 		return null;
 	}
 
+	public function slice(int $offset, int $length = null): self
+	{
+		$collection = new self();
+		$items = \array_slice($this->getArrayCopy(), $offset, $length);
+		$collection->addAll($items);
+		return $collection;
+	}
+
 }
