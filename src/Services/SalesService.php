@@ -36,11 +36,12 @@ class SalesService extends BaseService
 	public function sales(?int $pharmacyId = 0, bool $current = true): SalesCollection
 	{
 		$path = 'sales';
-		if($pharmacyId == 0) {
+		if($pharmacyId != 0) {
 			$path .= '/'.$pharmacyId;
 		}
 		$collection = (new SalesCollection())->addAll($this->get($path));
-		if($current) {
+		if($current)
+		{
 			$collection = $collection->filter(
 			 function($sale){
 				$now = new \DateTime();
