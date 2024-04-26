@@ -8,21 +8,21 @@ class SalesService extends BaseService
 {
 	/**
 	 * @param int|null $pharmacyId
-	 * @param          $current
+	 * @param bool     $current
 	 * @return float
 	 */
-	public function salesAmount(?int $pharmacyId = 0, $current = true): float
+	public function salesAmount(?int $pharmacyId = 0, bool $current = true): float
 	{
 		if($current) {
-			$this->path = 'sales/amount/current';
+			$path = 'sales/amount/current';
 		} else {
-			$this->path = 'sales/amount';
+			$path = 'sales/amount';
 		}
-		if($pharmacyId == 0) {
-			$this->path .= '/'.$pharmacyId;
+		if($pharmacyId) {
+			$path .= '/'.$pharmacyId;
 		}
 
-		$results = $this->execute('GET');
+		$results = $this->get($path);
 
 		return (float) $results['sales'];
 	}
