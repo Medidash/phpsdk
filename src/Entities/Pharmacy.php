@@ -131,7 +131,7 @@ class Pharmacy implements EntityInterface
 		$pharmacy->setPracticeNumber($data['practice_number']);
 		$pharmacy->setBhfPracticeNumber($data['bhf_practice_number']);
 		$pharmacy->setProvince($data['province']);
-		$pharmacy->setActive((bool) $data['active']);
+		$pharmacy->setActive($data['active'] == '1');
 
 		return $pharmacy;
 	}
