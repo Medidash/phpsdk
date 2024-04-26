@@ -25,4 +25,13 @@ class PharmacyService extends BaseService
 		$response = $this->put('pharmacy/'.$pharmacyId, ['active' => true]);
 		return $response['code'] == 'success';
 	}
+
+	/**
+	 * @return PharmacyCollection
+	 */
+	public function all(): PharmacyCollection
+	{
+		$response = $this->get('pharmacy');
+		return (new PharmacyCollection())->addAll($response);
+	}
 }
