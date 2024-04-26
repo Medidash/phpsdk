@@ -76,4 +76,19 @@ class PriceCollection extends AbstractCollection
 		$this->append($price);
 	}
 
+	public function addAll(array $items): self
+	{
+		foreach ($items as $item) {
+			$price = Price::fromArray($item);
+			$this->addPrice($price);
+		}
+		return $this;
+
+	}
+
+	public function findById(int $id): ?Price
+	{
+		return null;
+	}
+
 }

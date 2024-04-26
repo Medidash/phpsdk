@@ -2,7 +2,7 @@
 
 namespace Medidash\Phpsdk\Entities;
 
-interface Traversable
+interface EntityInterface
 {
 	/**
 	 * @return array

@@ -2,7 +2,7 @@
 
 namespace Medidash\Phpsdk\Entities;
 
-class Product implements Traversable
+class Product implements EntityInterface
 {
 	private int $id;
 	private string $name;

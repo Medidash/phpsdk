@@ -2,16 +2,16 @@
 
 namespace Medidash\Phpsdk\Collections;
 
-use Medidash\Phpsdk\Entities\Product;
+use Medidash\Phpsdk\Entities\Sales;
 
-class ProductCollection extends AbstractCollection
+class SalesCollection extends AbstractCollection
 {
 	/**
 	 * @return string
 	 */
 	protected function getCollectionType(): string
 	{
-		return Product::class;
+		return Sales::class;
 	}
 
 	/**
@@ -21,7 +21,7 @@ class ProductCollection extends AbstractCollection
 	{
 		$data = [];
 
-		/** @var Product $item */
+		/** @var Sales $item */
 		foreach ($this as $item) {
 			$data[] = $item->toArray();
 		}
@@ -34,13 +34,13 @@ class ProductCollection extends AbstractCollection
 	 *
 	 * @param callable $function This is a callable function that must return true or false for an item to be
 	 *  included in the resulting ProductCollection
-	 * @return ProductCollection
+	 * @return SalesCollection
 	 */
 	public function filter(callable $function): self
 	{
 		$collection = new self();
 
-		/** @var Product $item */
+		/** @var Sales $item */
 		foreach ($this as $item) {
 			if (!$function($item)) {
 				continue;
@@ -52,15 +52,49 @@ class ProductCollection extends AbstractCollection
 		return $collection;
 	}
 
+
+
 	/**
-	 * Finds a product in the collection by its ID.
+	 * Returns the first product in the collection.
 	 *
-	 * @param int $id
-	 * @return Product|null
+	 * @return Sales|null
 	 */
-	public function findById(int $id): ?Product
+	public function first(): ?Sales
 	{
-		/** @var Product $item */
+		/** @var Sales $item */
+		foreach ($this as $item) {
+			return $item;
+		}
+
+		return null;
+	}
+
+
+
+	public function addSales(Sales $sales)
+	{
+		$this->append($sales);
+	}
+
+	public function salesExists(int $id): bool
+	{
+		return $this->findById($id) !== null;
+	}
+
+	public function addAll(array $items): self
+	{
+		foreach ($items as $item) {
+			$sale = Sales::fromArray($item);
+			if(!$this->salesExists($sale->getId())){
+				$this->addSales($sale);
+			}
+		}
+		return $this;
+
+	}
+	public function findById(int $id): ?Sales
+	{
+		/** @var Sales $item */
 		foreach ($this as $item) {
 			if ($item->getId() === $id) {
 				return $item;
@@ -70,45 +104,4 @@ class ProductCollection extends AbstractCollection
 		return null;
 	}
 
-	/**
-	 * Returns the first product in the collection.
-	 *
-	 * @return Product|null
-	 */
-	public function first(): ?Product
-	{
-		/** @var Product $item */
-		foreach ($this as $item) {
-			return $item;
-		}
-
-		return null;
-	}
-
-	/**
-	 * Checks if a product with the given ID exists in the collection.
-	 *
-	 * @param int $id
-	 * @return bool
-	 */
-	public function productExists(int $id): bool
-	{
-		return $this->findById($id) !== null;
-	}
-
-	public function addProduct(Product $product)
-	{
-		$this->append($product);
-	}
-
-	public function addAll(array $items): self
-	{
-		foreach ($items as $item) {
-			$product = Product::fromArray($item);
-			if(!$this->productExists($product->getId())){
-				$this->addProduct($product);
-			}
-		}
-		return $this;
-	}
 }

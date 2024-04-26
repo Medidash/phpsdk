@@ -1,11 +1,11 @@
 <?php
 
-namespace Medidash\Phpsdk\Calls;
+namespace Medidash\Phpsdk\Services;
 
 use Laminas\Config\Config;
 use Laminas\Http\Client;
 
-abstract class Base
+abstract class BaseService
 {
 	protected Config $config;
 	protected Client $client;
@@ -29,6 +29,22 @@ abstract class Base
 	protected function getUrl(): string
 	{
 		return $this->config->endpoint . $this->path;
+	}
+
+	protected function get(string $path): array
+	{
+		$this->path = $path;
+		return $this->execute('GET');
+	}
+	protected function post(string $path, array $data): array
+	{
+		$this->path = $path;
+		return $this->execute('POST', $data);
+	}
+	protected function put(string $path, array $data): array
+	{
+		$this->path = $path;
+		return $this->execute('PUT', $data);
 	}
 
 	protected function execute(string $method, array $data = []): array

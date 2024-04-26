@@ -2,7 +2,7 @@
 
 namespace Medidash\Phpsdk\Entities;
 
-class Price implements Traversable
+class Price implements EntityInterface
 {
 
 
