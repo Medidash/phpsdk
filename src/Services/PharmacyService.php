@@ -34,4 +34,12 @@ class PharmacyService extends BaseService
 		$response = $this->get('pharmacy');
 		return (new PharmacyCollection())->addAll($response);
 	}
+
+	/**
+	 * @return array
+	 */
+	public function getByProvince(): array
+	{
+		return $this->get('pharmacy/province');
+	}
 }
