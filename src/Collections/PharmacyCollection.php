@@ -1,6 +1,6 @@
 <?php
 
-namespace Medidash\Phpsdk\Collections\Items;
+namespace Medidash\Phpsdk\Collections;
 use Medidash\Phpsdk\Entities\Pharmacy;
 
 
