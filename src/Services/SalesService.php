@@ -44,9 +44,7 @@ class SalesService extends BaseService
 			$collection = $collection->filter(
 			 function($sale){
 				$now = new \DateTime();
-
-				$saleDate = new \DateTime(strtotime($sale->date));
-				return $saleDate->format('Y-m') == $now->format('Y-m');
+				return date('Y-m', strtotime($sale->date)) == $now->format('Y-m');
 			});
 		}
 
