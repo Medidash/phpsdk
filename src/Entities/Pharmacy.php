@@ -107,7 +107,17 @@ class Pharmacy implements EntityInterface
 
 	public function toArray(): array
 	{
-		return get_object_vars($this);
+		return [
+			'id' => $this->getId(),
+			'name' => $this->getName(),
+			'active' => $this->isActive(),
+			'practice_number' => $this->getPracticeNumber(),
+			'bhf_practice_number' => $this->getBhfPracticeNumber(),
+			'email_address' => $this->getEmailAddress(),
+			'contact_number' => $this->getContactNumber(),
+			'address' => $this->getAddress(),
+			'province' => $this->getProvince()
+		];
 	}
 
 	public static function fromArray(array $data): self

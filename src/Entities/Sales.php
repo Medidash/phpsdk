@@ -74,7 +74,15 @@ class Sales implements EntityInterface
 
 	public function toArray(): array
 	{
-		return get_object_vars($this);
+		return [
+			'id'           => $this->getId(),
+			'delivery_mode' => $this->getDeliveryMode(),
+			'amount'       => $this->getAmount(),
+			'order_date'   => $this->getOrderDate(),
+			'pharmacy'     => $this->getPharmacy(),
+			'status'       => $this->getStatus(),
+		];
+		
 	}
 
 	public static function fromArray(array $data): self
