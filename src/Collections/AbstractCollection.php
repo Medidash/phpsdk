@@ -2,7 +2,7 @@
 namespace Medidash\Phpsdk\Collections;
 
 use InvalidArgumentException;
-use Medidash\Phpsdk\Entities\EnitityInterface;
+
 
 abstract class AbstractCollection extends \ArrayObject
 {

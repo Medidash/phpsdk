@@ -1,7 +1,9 @@
 <?php
 
-namespace Medidash\Phpsdk\Collections;
+namespace Medidash\Phpsdk\Collections\Items;
 use Medidash\Phpsdk\Entities\Pharmacy;
+
+
 
 class PharmacyCollection extends AbstractCollection
 {
