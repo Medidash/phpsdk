@@ -40,6 +40,6 @@ class PharmacyService extends BaseService
 	 */
 	public function getByProvince(): array
 	{
-		return $this->get('pharmacy/province');
+		return $this->get('pharmacy/provinces');
 	}
 }
