@@ -12,7 +12,9 @@ class PharmacyService extends BaseService
 	{
 		$response = $this->get('pharmacy');
 		$collection =  (new PharmacyCollection())->addAll($response);
-		$collection->filter(fn($pharmacy) => !$pharmacy->isActive());
+		$collection->filter(function ($pharmacy) {
+			return !$pharmacy->isActive();
+		});
 		return $collection;
 	}
 

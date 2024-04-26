@@ -12,7 +12,7 @@ abstract class AbstractCollection extends \ArrayObject
 	 * @param int $flags
 	 * @param string $iterator_class
 	 */
-	public function __construct($input = [], int $flags = 0, string $iterator_class = \ArrayIterator::class)
+	public function __construct(array $input = [], int $flags = 0, string $iterator_class = \ArrayIterator::class)
 	{
 		$this->validateInput($input);
 		parent::__construct($input, $flags, $iterator_class);
@@ -28,11 +28,10 @@ abstract class AbstractCollection extends \ArrayObject
 
 	/**
 	 * Validate input array items against the collection type.
-	 *
-	 * @param array<mixed>|object $input
+	 * @param object|array<mixed> $input
 	 * @throws InvalidArgumentException
 	 */
-	private function validateInput($input): void
+	private function validateInput(object|array $input): void
 	{
 		if (is_array($input)) {
 			foreach ($input as $item) {
@@ -45,11 +44,10 @@ abstract class AbstractCollection extends \ArrayObject
 
 	/**
 	 * Validate a single item against the collection type.
-	 *
-	 * @param TValue|object $item
+	 * @param object|TValue $item
 	 * @throws InvalidArgumentException
 	 */
-	private function validateItem($item): void
+	private function validateItem(object $item): void
 	{
 		$type = $this->getCollectionType();
 		if (!($item instanceof $type)) {
