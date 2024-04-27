@@ -44,4 +44,16 @@ class PharmacyService extends BaseService
 	{
 		return $this->get('pharmacy/provinces');
 	}
+
+	public function activate(int $pharmacyId): array
+	{
+		$data = ['active' => '1'];
+		return $this->put('pharmacy/'.$pharmacyId, $data);
+	}
+
+	public function deactivate(int $pharmacyId): array
+	{
+		$data = ['active' => '0'];
+		return $this->put('pharmacy/'.$pharmacyId, $data);
+	}
 }
