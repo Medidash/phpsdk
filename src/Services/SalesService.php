@@ -2,6 +2,7 @@
 
 namespace Medidash\Phpsdk\Services;
 use Exception;
+use Medidash\Phpsdk\Collections\OrderItemCollection;
 use Medidash\Phpsdk\Collections\SalesCollection;
 
 class SalesService extends BaseService
@@ -64,5 +65,12 @@ class SalesService extends BaseService
 		}
 		$path = 'sales/count/'.$stype;
 		return $this->get($path);
+	}
+
+	public function getOrderItems(int $orderId): OrderItemCollection
+	{
+		$path = 'orders/'.$orderId;
+		$order =  $this->get($path);
+		return (new OrderItemCollection())->addAll($order['items']);
 	}
 }

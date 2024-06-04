@@ -101,4 +101,20 @@ class PharmacyCollection extends AbstractCollection
 		return false;
 	}
 
+	/**
+	 * Returns the first pharmacy in the collection.
+	 *
+	 * @return Pharmacy|null
+	 */
+	public function first(): ?Pharmacy
+	{
+		/** @var Pharmacy $item */
+		foreach ($this as $item) {
+			return $item;
+		}
+
+		return null;
+	}
+
+
 }
