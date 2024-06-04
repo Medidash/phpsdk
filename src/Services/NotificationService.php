@@ -14,7 +14,6 @@ class NotificationService extends BaseService
 	}
 
 	/**
-	 * @param int   $id
 	 * @param array $data
 	 * @return array
 	 */
