@@ -11,6 +11,8 @@ class Sales implements EntityInterface
 	private string $orderDate;
 	private string $pharmacy;
 	private string $status;
+	private string $orderNumber;
+	private string $customer;
 
 	public function getId(): int
 	{
@@ -72,6 +74,28 @@ class Sales implements EntityInterface
 		$this->status = $status;
 	}
 
+	public function getOrderNumber(): string
+	{
+		return $this->orderNumber;
+	}
+
+	public function setOrderNumber(string $orderNumber): void
+	{
+		$this->orderNumber = $orderNumber;
+	}
+
+	public function getCustomer(): string
+	{
+		return $this->customer;
+	}
+
+	public function setCustomer(string $customer): void
+	{
+		$this->customer = $customer;
+	}
+
+
+
 	public function toArray(): array
 	{
 		return [
@@ -81,6 +105,8 @@ class Sales implements EntityInterface
 			'order_date'   => $this->getOrderDate(),
 			'pharmacy'     => $this->getPharmacy(),
 			'status'       => $this->getStatus(),
+			'order_number'       => $this->getOrderNumber(),
+			'customer'       => $this->getCustomer(),
 		];
 		
 	}
@@ -94,6 +120,8 @@ class Sales implements EntityInterface
 		$sales->setOrderDate($data['order_date']);
 		$sales->setPharmacy($data['pharmacy']);
 		$sales->setStatus($data['status']);
+		$sales->setOrderNumber($data['order_number']);
+		$sales->setCustomer($data['customer']);
 		return $sales;
 
 	}
