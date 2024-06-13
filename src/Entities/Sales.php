@@ -14,7 +14,7 @@ class Sales implements EntityInterface
 	private string $orderNumber;
 	private string $customer;
 	private string $customerId;
-	private string $deliveryNote;
+	private ?string $deliveryNote;
 
 	public function getId(): int
 	{
@@ -106,12 +106,12 @@ class Sales implements EntityInterface
 		$this->customerId = $customerId;
 	}
 
-	public function getDeliveryNote(): string
+	public function getDeliveryNote(): string | null
 	{
 		return $this->deliveryNote;
 	}
 
-	public function setDeliveryNote(string $deliveryNote): void
+	public function setDeliveryNote(?string $deliveryNote): void
 	{
 		$this->deliveryNote = $deliveryNote;
 	}
