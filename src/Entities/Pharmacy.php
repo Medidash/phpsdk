@@ -173,7 +173,7 @@ class Pharmacy implements EntityInterface
 		$pharmacy->setActive($data['active'] == '1');
 		$pharmacy->setIdNumber($data['id_number']??'');
 		$pharmacy->setMembership($data['membership']??'');
-		$pharmacy->setRegistrationNumber($data['registration_number']);
+		$pharmacy->setRegistrationNumber($data['registration_number']??'');
 
 		return $pharmacy;
 	}
