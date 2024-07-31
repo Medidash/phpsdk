@@ -34,20 +34,20 @@ abstract class BaseService
 	protected function get(string $path): array
 	{
 		$this->path = $path;
-		return $this->execute('GET');
+		return $this->execute('GET')?? [];
 	}
 	protected function post(string $path, array $data): array
 	{
 		$this->path = $path;
-		return $this->execute('POST', $data);
+		return $this->execute('POST', $data)??[];
 	}
 	protected function put(string $path, array $data): array
 	{
 		$this->path = $path;
-		return $this->execute('PUT', $data);
+		return $this->execute('PUT', $data)??[];
 	}
 
-	protected function execute(string $method, array $data = []): array
+	protected function execute(string $method, array $data = []): ?array
 	{
 		$this->client->setUri($this->getUrl());
 		$this->client->setMethod($method);

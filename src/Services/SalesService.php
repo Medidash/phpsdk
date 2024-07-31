@@ -64,7 +64,7 @@ class SalesService extends BaseService
 			throw new Exception('Invalid stats type');
 		}
 		$path = 'sales/count/'.$stype;
-		return $this->get($path)??[];
+		return $this->get($path);
 	}
 
 	public function getOrderItems(int $orderId): OrderItemCollection

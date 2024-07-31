@@ -110,7 +110,7 @@ class Pharmacy implements EntityInterface
 
 	public function getMembership(): string
 	{
-		return $this->membership;
+		return $this->membership??'';
 	}
 
 	public function setMembership(string $membership): void
@@ -120,7 +120,7 @@ class Pharmacy implements EntityInterface
 
 	public function getIdNumber(): string
 	{
-		return $this->idNumber;
+		return $this->idNumber??'';
 	}
 
 	public function setIdNumber(string $idNumber): void
@@ -171,8 +171,8 @@ class Pharmacy implements EntityInterface
 		$pharmacy->setBhfPracticeNumber($data['bhf_practice_number']);
 		$pharmacy->setProvince($data['province']);
 		$pharmacy->setActive($data['active'] == '1');
-		$pharmacy->setIdNumber($data['id_number']);
-		$pharmacy->setMembership($data['membership']);
+		$pharmacy->setIdNumber($data['id_number']??'');
+		$pharmacy->setMembership($data['membership']??'');
 		$pharmacy->setRegistrationNumber($data['registration_number']);
 
 		return $pharmacy;
