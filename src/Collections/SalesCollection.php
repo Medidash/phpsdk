@@ -71,7 +71,7 @@ class SalesCollection extends AbstractCollection
 
 
 
-	public function addSales(Sales $sales)
+	public function addSales(Sales $sales): void
 	{
 		$this->append($sales);
 	}

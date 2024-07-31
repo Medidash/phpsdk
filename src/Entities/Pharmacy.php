@@ -14,6 +14,9 @@ class Pharmacy implements EntityInterface
 	private string $contactNumber;
 	private string $address;
 	private string $province;
+	private string $membership;
+	private string $idNumber;
+	private string $registrationNumber;
 
 	public function getId(): int
 	{
@@ -105,6 +108,38 @@ class Pharmacy implements EntityInterface
 		$this->name = $name;
 	}
 
+	public function getMembership(): string
+	{
+		return $this->membership;
+	}
+
+	public function setMembership(string $membership): void
+	{
+		$this->membership = $membership;
+	}
+
+	public function getIdNumber(): string
+	{
+		return $this->idNumber;
+	}
+
+	public function setIdNumber(string $idNumber): void
+	{
+		$this->idNumber = $idNumber;
+	}
+
+	public function getRegistrationNumber(): string
+	{
+		return $this->registrationNumber;
+	}
+
+	public function setRegistrationNumber(string $registrationNumber): void
+	{
+		$this->registrationNumber = $registrationNumber;
+	}
+
+
+
 	public function toArray(): array
 	{
 		return [
@@ -116,9 +151,13 @@ class Pharmacy implements EntityInterface
 			'email_address' => $this->getEmailAddress(),
 			'contact_number' => $this->getContactNumber(),
 			'address' => $this->getAddress(),
-			'province' => $this->getProvince()
+			'province' => $this->getProvince(),
+			'id_number' => $this->getIdNumber(),
+			'membership' => $this->getMembership(),
+			'registration_number' => $this->getRegistrationNumber()
 		];
 	}
+
 
 	public static function fromArray(array $data): self
 	{
@@ -132,6 +171,9 @@ class Pharmacy implements EntityInterface
 		$pharmacy->setBhfPracticeNumber($data['bhf_practice_number']);
 		$pharmacy->setProvince($data['province']);
 		$pharmacy->setActive($data['active'] == '1');
+		$pharmacy->setIdNumber($data['id_number']);
+		$pharmacy->setMembership($data['membership']);
+		$pharmacy->setRegistrationNumber($data['registration_number']);
 
 		return $pharmacy;
 	}

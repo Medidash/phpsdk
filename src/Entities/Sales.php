@@ -122,16 +122,16 @@ class Sales implements EntityInterface
 	public function toArray(): array
 	{
 		return [
-			'id'           => $this->getId(),
-			'delivery_mode' => $this->getDeliveryMode(),
-			'amount'       => $this->getAmount(),
-			'order_date'   => $this->getOrderDate(),
-			'pharmacy'     => $this->getPharmacy(),
-			'status'       => $this->getStatus(),
-			'order_number'       => $this->getOrderNumber(),
-			'customer'       => $this->getCustomer(),
+			'id'           		=> $this->getId(),
+			'delivery_mode' 	=> $this->getDeliveryMode(),
+			'amount'       		=> $this->getAmount(),
+			'order_date'   		=> $this->getOrderDate(),
+			'pharmacy'    		=> $this->getPharmacy(),
+			'status'       		=> $this->getStatus(),
+			'order_number'      => $this->getOrderNumber(),
+			'customer'       	=> $this->getCustomer(),
 			'customer_id'       => $this->getCustomerId(),
-			'delivery_note'       => $this->getDeliveryNote(),
+			'delivery_note'      => $this->getDeliveryNote(),
 		];
 		
 	}
