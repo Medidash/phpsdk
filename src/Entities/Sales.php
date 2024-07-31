@@ -26,9 +26,9 @@ class Sales implements EntityInterface
 		$this->id = $id;
 	}
 
-	public function getDeliveryMode(): string
+	public function getDeliveryMode(): ?string
 	{
-		return $this->deliveryMode;
+		return $this->deliveryMode?? null;
 	}
 
 	public function setDeliveryMode(string $deliveryMode): void
