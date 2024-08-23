@@ -7,7 +7,7 @@ class DocumentService extends BaseService
 
 	public function pharmacyDocuments(int $pharmacyId): array
 	{
-		return $this->get("/documents/{$pharmacyId}");
+		return $this->get("documents/{$pharmacyId}");
 	}
 
 }
