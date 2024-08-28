@@ -56,4 +56,9 @@ class PharmacyService extends BaseService
 		$data = ['active' => '0'];
 		return $this->put('pharmacy/'.$pharmacyId, $data);
 	}
+
+	public function create(array $data): array
+	{
+		return $this->post('pharmacy', $data);
+	}
 }
