@@ -4,7 +4,7 @@ namespace Medidash\Phpsdk\Services;
 
 class SubscriptionService extends BaseService
 {
-	public function getUserSubscriptions(int $userId): array
+	public function getUserSubscription(int $userId): array
 	{
 		return $this->get('subscriptions/user/'.$userId);
 	}
