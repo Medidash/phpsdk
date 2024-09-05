@@ -115,8 +115,8 @@ class Product implements EntityInterface
 		$product = new self();
 		$product->setId($data['id']);
 		$product->setName($data['name']);
-		$product->setPrice($data['price']);
-		$product->setMinPrice($data['min_price']);
+		$product->setPrice((float) $data['price']);
+		$product->setMinPrice((float) $data['min_price']);
 		$product->setImage($data['image']);
 		$product->setDescription($data['description']);
 		$product->setShortDescription($data['short_description']);
