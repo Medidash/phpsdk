@@ -11,6 +11,10 @@ class ProductService extends BaseService
 	 */
 	public function allProducts(int $pharmacyId): ProductCollection
 	{
-		return (new ProductCollection())->addAll($this->get('products/pharmacy/'.$pharmacyId));
+		$pharmacies = $this->get('products/pharmacy/'.$pharmacyId);
+		usort($pharmacies, function($a, $b) {
+			return $a['name'] <=> $b['name'];
+		});
+		return (new ProductCollection())->addAll($pharmacies);
 	}
 }
