@@ -80,11 +80,8 @@ class PharmacyService extends BaseService
       	return $pharmacy->isVisible();
 	}
 
-	public function setVisible(int $pharmacyId, bool $visible): bool
+	public function setVisible(int $pharmacyId, bool $visible): array
 	{
-		$response = $this->put('pharmacy/'.$pharmacyId, ['visible' => $visible]);
-		return $response;
+		return $this->put('pharmacy/'.$pharmacyId, ['visible' => $visible]);
 	}
-
-
 }
