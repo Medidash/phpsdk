@@ -72,4 +72,19 @@ class PharmacyService extends BaseService
 	{
 		return $this->post('pharmacy', $data);
 	}
+
+	public function isVisible(int $pharmacyId): bool
+	{
+		$response = $this->get('pharmacy');
+      	$pharmacy = (new PharmacyCollection())->addAll($response)->findById($pharmacyId);
+      	return $pharmacy->isVisible();
+	}
+
+	public function setVisible(int $pharmacyId, bool $visible): bool
+	{
+		$response = $this->put('pharmacy/'.$pharmacyId, ['visible' => $visible]);
+		return $response;
+	}
+
+
 }

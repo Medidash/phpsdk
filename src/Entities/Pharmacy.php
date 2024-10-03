@@ -8,6 +8,7 @@ class Pharmacy implements EntityInterface
 	private int $id;
 	private string $name;
 	private bool $active;
+	private bool $visible;
 	private string $practiceNumber;
 	private string $bhfPracticeNumber;
 	private string $emailAddress;
@@ -138,6 +139,17 @@ class Pharmacy implements EntityInterface
 		$this->registrationNumber = $registrationNumber;
 	}
 
+	public function isVisible(): bool
+	{
+		return $this->visible;
+	}
+
+	public function setVisible(bool $visible): void
+	{
+		$this->visible = $visible;
+	}
+
+
 
 
 	public function toArray(): array
@@ -146,6 +158,7 @@ class Pharmacy implements EntityInterface
 			'id' => $this->getId(),
 			'name' => $this->getName(),
 			'active' => $this->isActive(),
+			'visible' => $this->isVisible(),
 			'practice_number' => $this->getPracticeNumber(),
 			'bhf_practice_number' => $this->getBhfPracticeNumber(),
 			'email_address' => $this->getEmailAddress(),
@@ -171,12 +184,13 @@ class Pharmacy implements EntityInterface
 		$pharmacy->setBhfPracticeNumber($data['bhf_practice_number']);
 		$pharmacy->setProvince($data['province']);
 		$pharmacy->setActive($data['active'] == '1');
+		$pharmacy->setVisible($data['visible'] == '1');
 		$pharmacy->setIdNumber($data['id_number']??'');
 		$pharmacy->setMembership($data['membership']??'');
 		$pharmacy->setRegistrationNumber($data['registration_number']??'');
 
 		return $pharmacy;
 	}
-	
+
 
 }
